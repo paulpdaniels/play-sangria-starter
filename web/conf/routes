@@ -1,0 +1,4 @@
+
+
+POST       /rest/dapperware/v1/graphql                         me.dapperware.controllers.DapperController.graphql
+GET        /graphiql                                           me.dapperware.controllers.DapperController.graphiql
