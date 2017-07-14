@@ -30,9 +30,11 @@ lazy val web = (project in file("./web"))
     libraryDependencies ++= Seq(
       filters,
       Play26.sangriaPlay,
+      Ext.macwireMacros,
+      Ext.macwireRuntime,
       Ext.sangria,
       Ext.scalaTest,
-      Ext.macwireMacros,
-      Ext.macwireRuntime
+      Ext.reactiveMongo,
+      Ext.neo4j
     )
   )

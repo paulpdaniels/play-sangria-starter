@@ -16,6 +16,9 @@ object Dependencies {
     val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1" % "test"
     val macwireMacros = "com.softwaremill.macwire" %% "macros" % macwireVersion % "provided"
     val macwireRuntime = "com.softwaremill.macwire" %% "util" % macwireVersion
+    val reactiveMongo = "org.reactivemongo" %% "reactivemongo" % "0.12.5"
+    val neo4j = "org.neo4j.driver" % "neo4j-java-driver" % "1.2.1"
+
   }
 
 

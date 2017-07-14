@@ -15,7 +15,7 @@ import sangria.schema.Schema
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.control.NonFatal
 
-class GraphQLAction[Ctx](
+class GraphQLActionToolkit[Ctx](
   schema: Schema[Ctx, Unit],
   actionBuilder: ActionBuilder[Request, AnyContent],
   resolver: DeferredResolver[Ctx] = DeferredResolver.empty
@@ -65,4 +65,14 @@ class GraphQLAction[Ctx](
         variables = variables,
         deferredResolver = deferredResolver
       )
+}
+
+object GraphQLActionToolkit {
+
+  def apply[Ctx](
+    schema: Schema[Ctx, Unit],
+    actionBuilder: ActionBuilder[Request, AnyContent],
+    resolver: DeferredResolver[Ctx] = DeferredResolver.empty
+  ): GraphQLActionToolkit[Ctx] =
+    new GraphQLActionToolkit[Ctx](schema, actionBuilder, resolver)
 }
